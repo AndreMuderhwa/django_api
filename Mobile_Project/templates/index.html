@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Bonjour</h1>
+    {% comment %} <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+        {{formulaire.as_p}}
+        <button type="submit">Envoyer</button>
+    </form> {% endcomment %}
+   <hr>
+<table>
+   <tr>
+    <th>Nom</th>
+    <th>Service</th>
+    <th>Logo</th>
+    <th>Fondateur</th>
+   </tr>
+   
+   <tr>
+        
+        {% for i in data %}
+
+        <td>{{i.nom}}</td>
+        <td>{{i.service}}</td>
+        <td><img src="/images/{{i.logo}}"/></td>
+
+        <td>{{i.fondateur}}</td>
+        {% endfor %}
+   </tr>
+
+</table>
+
+
+</body>
+</html>

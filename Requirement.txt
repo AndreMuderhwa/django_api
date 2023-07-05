@@ -1,0 +1,5 @@
+django
+djangorestframework
+mysqlclient
+pillow
+pip install djangorestframework-simplejwt

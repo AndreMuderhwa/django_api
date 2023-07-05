@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    {% if not request.user.is_authenticated %}
+    <div>
+        <form method="POST" >
+            {% csrf_token %}
+            {% if erreur %}
+                    <p style="color: red;">{{erreur}}</p>
+
+            {% endif %}   
+            <div style="margin-top: 30px;">
+                <label>Username</label>
+                <input type="text" name="username"/>
+            </div>
+            <div style="margin-top: 10px;">
+                <label>Password</label>
+                <input type="password" name="password"/>
+            </div>
+            <div style="margin-top: 10px;">
+                <button type="submit">se connecter</button>
+            </div>
+        </form>
+    </div>
+    {% else %}
+            <p>Vous êtes déjà connecté, voulez-vous vous <a href="/logout">déconnecter?</a> </p>
+
+    {% endif %}
+</body>
+</html>
