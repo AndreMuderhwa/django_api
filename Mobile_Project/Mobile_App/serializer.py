@@ -44,4 +44,35 @@ class UserSerializer(serializers.ModelSerializer):
         )
         user.save()
         return user
-    
+
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Post
+        fields='__all__'
+
+class VideoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Video
+        fields='__all__'
+
+class StorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Story
+        fields='__all__'
+
+class ImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Images
+        fields='__all__'
+
+
+class CommentaireSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Commentaire
+        fields='__all__'
+
+
+class MembreSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Membre
+        fields='__all__'
